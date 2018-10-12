@@ -5,7 +5,7 @@ var Schema = mongoose.Schema,
 
 var QueenSchema = new Schema({
   id: ObjectId,
-  name: { type: String, required: true },
+  name: { type: String, required: false },
   website_url: { type: String, required: false },
   events: [ EventSchema]
 });
