@@ -4,36 +4,36 @@ import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
+  selector: 'app-queen',
+  templateUrl: './queen.component.html',
+  styleUrls: ['./queen.component.css']
 })
-export class BookComponent implements OnInit {
+export class QueenComponent implements OnInit {
 
-  books: any;
+  queens: any;
   displayedColumns = ['isbn', 'title', 'author'];
-  dataSource = new BookDataSource(this.api);
+  dataSource = new QueenDataSource(this.api);
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.api.getBooks()
+    this.api.getQueens()
       .subscribe(res => {
         console.log(res);
-        this.books = res;
+        this.queens = res;
       }, err => {
         console.log(err);
       });
   }
 }
 
-export class BookDataSource extends DataSource<any> {
+export class QueenDataSource extends DataSource<any> {
   constructor(private api: ApiService) {
     super()
   }
 
   connect() {
-    return this.api.getBooks();
+    return this.api.getQueens();
   }
 
   disconnect() {

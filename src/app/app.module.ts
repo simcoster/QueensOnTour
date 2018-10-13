@@ -5,10 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { BookComponent } from './book/book.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookCreateComponent } from './book-create/book-create.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
+import { QueenComponent } from './queen/queen.component';
+import { QueenDetailComponent } from './queen-detail/queen-detail.component';
+import { QueenCreateComponent } from './queen-create/queen-create.component';
+import { QueenEditComponent } from './queen-edit/queen-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
@@ -24,27 +24,27 @@ import {
 
 const appRoutes: Routes = [
   {
-    path: 'books',
-    component: BookComponent,
-    data: { title: 'Book List' }
+    path: 'queens',
+    component: QueenComponent,
+    data: { title: 'Queen List' }
   },
   {
-    path: 'book-details/:id',
-    component: BookDetailComponent,
-    data: { title: 'Book Details' }
+    path: 'queen-details/:id',
+    component: QueenDetailComponent,
+    data: { title: 'Queen Details' }
   },
   {
-    path: 'book-create',
-    component: BookCreateComponent,
-    data: { title: 'Create Book' }
+    path: 'queen-create',
+    component: QueenCreateComponent,
+    data: { title: 'Create Queen' }
   },
   {
-    path: 'book-edit/:id',
-    component: BookEditComponent,
-    data: { title: 'Edit Book' }
+    path: 'queen-edit/:id',
+    component: QueenEditComponent,
+    data: { title: 'Edit Queen' }
   },
   { path: '',
-    redirectTo: '/books',
+    redirectTo: '/queens',
     pathMatch: 'full'
   }
 ];
@@ -52,11 +52,11 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    BookDetailComponent,
-    BookCreateComponent,
-    BookEditComponent
-  ],
+    QueenComponent,
+    QueenDetailComponent,
+    QueenCreateComponent,
+    QueenEditComponent
+    ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,

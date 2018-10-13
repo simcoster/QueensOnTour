@@ -4,13 +4,13 @@ import { ApiService } from '../api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-book-create',
-  templateUrl: './book-create.component.html',
-  styleUrls: ['./book-create.component.css']
+  selector: 'app-queen-create',
+  templateUrl: './queen-create.component.html',
+  styleUrls: ['./queen-create.component.css']
 })
-export class BookCreateComponent implements OnInit {
+export class QueenCreateComponent implements OnInit {
 
-  bookForm: FormGroup;
+  queenForm: FormGroup;
   isbn:string='';
   title:string='';
   description:string='';
@@ -21,7 +21,7 @@ export class BookCreateComponent implements OnInit {
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.bookForm = this.formBuilder.group({
+    this.queenForm = this.formBuilder.group({
       'isbn' : [null, Validators.required],
       'title' : [null, Validators.required],
       'description' : [null, Validators.required],
@@ -32,10 +32,10 @@ export class BookCreateComponent implements OnInit {
   }
 
   onFormSubmit(form:NgForm) {
-    this.api.postBook(form)
+    this.api.postQueen(form)
       .subscribe(res => {
           let id = res['_id'];
-          this.router.navigate(['/book-details', id]);
+          this.router.navigate(['/queen-details', id]);
         }, (err) => {
           console.log(err);
         });
