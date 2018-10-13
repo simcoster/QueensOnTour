@@ -11,23 +11,15 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 export class QueenCreateComponent implements OnInit {
 
   queenForm: FormGroup;
-  isbn:string='';
-  title:string='';
-  description:string='';
-  author:string='';
-  publisher:string='';
-  published_year:string='';
+  name:string='';
+  website:string='';
 
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.queenForm = this.formBuilder.group({
-      'isbn' : [null, Validators.required],
-      'title' : [null, Validators.required],
-      'description' : [null, Validators.required],
-      'author' : [null, Validators.required],
-      'publisher' : [null, Validators.required],
-      'published_year' : [null, Validators.required]
+      'name' : [null, Validators.required],
+      'website' : [null, Validators.required]
     });
   }
 

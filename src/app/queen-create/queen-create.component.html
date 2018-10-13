@@ -3,47 +3,20 @@
 </div>
 <form [formGroup]="queenForm" (ngSubmit)="onFormSubmit(queenForm.value)">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="ISBN" formControlName="isbn"
+    <input matInput placeholder="Name" formControlName="name"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!queenForm.get('isbn').valid && queenForm.get('isbn').touched">Please enter ISBN</span>
+      <span *ngIf="!queenForm.get('name').valid && queenForm.get('name').touched">Please enter Name</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Title" formControlName="title"
+    <input matInput placeholder="Website Url" formControlName="website"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!queenForm.get('title').valid && queenForm.get('title').touched">Please enter Queen Title</span>
+      <span *ngIf="!queenForm.get('website').valid && queenForm.get('website').touched">Please enter Name</span>
     </mat-error>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Author" formControlName="author"
-           [errorStateMatcher]="matcher">
-    <mat-error>
-      <span *ngIf="!queenForm.get('author').valid && queenForm.get('author').touched">Please enter Queen Author</span>
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Description" formControlName="description"
-           [errorStateMatcher]="matcher"></textarea>
-    <mat-error>
-      <span *ngIf="!queenForm.get('description').valid && queenForm.get('description').touched">Please enter Queen Description</span>
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Publisher" formControlName="publisher"
-           [errorStateMatcher]="matcher">
-    <mat-error>
-      <span *ngIf="!queenForm.get('publisher').valid && queenForm.get('publisher').touched">Please enter Publisher</span>
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Published Year" formControlName="published_year"
-           [errorStateMatcher]="matcher">
-    <mat-error>
-      <span *ngIf="!queenForm.get('published_year').valid && queenForm.get('published_year').touched">Please enter Published Year</span>
-    </mat-error>
-  </mat-form-field>
+  
   <div class="button-row">
     <button type="submit" [disabled]="!queenForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
   </div>

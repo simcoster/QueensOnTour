@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class QueenComponent implements OnInit {
 
   queens: any;
-  displayedColumns = ['isbn', 'title', 'author'];
+  displayedColumns = ['name', 'website'];
   dataSource = new QueenDataSource(this.api);
 
   constructor(private api: ApiService) { }

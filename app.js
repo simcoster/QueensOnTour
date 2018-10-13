@@ -9,7 +9,7 @@ mongoose.connect('mongodb://user1:a123456@ds127854.mlab.com:27854/queens-db')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
-var apiRouter = require('./routes/book');
+var apiRouter = require('./routes/queen');
 
 var app = express();
 
@@ -17,10 +17,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/books', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/book-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/book-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/book-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/queens', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/queen-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/queen-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/queen-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
